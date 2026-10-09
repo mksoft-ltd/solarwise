@@ -24,7 +24,8 @@ FroggyEye ("we", "our", or "us") operates the SolarWise mobile application (the 
 
 ## 2. How We Use Information
 
-- **Solar calculations**: Your manually entered coordinates are sent to the NASA POWER API (a free, public US government service at power.larc.nasa.gov) to retrieve solar irradiance data for your location. No personal identifiers are included in this request.
+- **Solar calculations**: Your coordinates are sent to the NASA POWER API (a free, public US government service at power.larc.nasa.gov) to retrieve solar irradiance data for your location. No personal identifiers are included in this request.
+- **Place search**: If you look up your town or city by name, the text you type is sent to the Open-Meteo Geocoding API (a free, open-source service at geocoding-api.open-meteo.com) to convert it into coordinates. Only the search text is sent; no personal identifiers are included. You can skip this and enter coordinates manually instead.
 - **In-app purchase verification**: Your purchase status is cached locally on your device to determine whether Pro features should be unlocked.
 - **Saved configurations**: When you save a solar configuration, it is stored locally on your device using on-device storage. It is never uploaded to any server.
 
@@ -35,6 +36,7 @@ Our App uses the following third-party services:
 | Service | Purpose | Data Collected | Privacy Policy |
 |---------|---------|---------------|---------------|
 | **NASA POWER API** | Solar irradiance data | Latitude and longitude only | [NASA Privacy](https://www.nasa.gov/about/highlights/HP_Privacy.html) |
+| **Open-Meteo Geocoding API** | Town / city name → coordinates | Search text only (optional feature) | [Open-Meteo Terms](https://open-meteo.com/en/terms) |
 | **Google AdMob** | Advertising (free tier only) | Device ID, usage data, diagnostics | [Google Privacy](https://policies.google.com/privacy) |
 | **Apple StoreKit** | In-app purchases (iOS) | Purchase transactions | [Apple Privacy](https://www.apple.com/privacy/) |
 | **Google Play Billing** | In-app purchases (Android) | Purchase transactions | [Google Privacy](https://policies.google.com/privacy) |
@@ -54,7 +56,7 @@ SolarWise Pro users do not see any advertisements.
 
 - All solar configuration data and preferences are stored locally on your device.
 - No data is stored on our servers. We do not operate a backend server or database.
-- All network communications (NASA API, ads, purchases) use HTTPS encryption.
+- All network communications (NASA API, Open-Meteo geocoding, ads, purchases) use HTTPS encryption.
 - Purchase status is cached locally to allow offline access to Pro features.
 
 ## 6. Children's Privacy
